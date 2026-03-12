@@ -1,4 +1,11 @@
+'use client'
+
+import { useState } from "react";
+import Portal from "./Portal";
+
+
 export default function Products() {
+    const [portalImage, setPortalImage] = useState(null);
 
     const stickerDescriptions = {
         React: "This is a sticker of a cute cat sitting on a pile of books. The cat has big, round eyes and a fluffy tail. The books are colorful and have different titles on their spines.",
@@ -7,6 +14,13 @@ export default function Products() {
 
     return (
         <>
+            {portalImage && (
+                <Portal handleClosePortal={() => { setPortalImage(null) }}>
+                    <div className="portal-content">
+                        <img className="img-display" src={`med_res/${portalImage}.jpeg`} alt={`${portalImage}-high-res`} />
+                    </div>
+                </Portal>
+            )}
             <div className="section-container">
                 <div className="section-header">
                     <h2>Shop Our Selection</h2>
@@ -14,7 +28,8 @@ export default function Products() {
                 </div>
                 <div className="planner-container">
                     <div>
-                        <button className="img-button">
+                        <button onClick={() => { setPortalImage('planner') }}
+                            className="img-button">
                             <img src="low_res/planner.jpeg" alt="high-res-planner" />
                         </button>
                     </div>
