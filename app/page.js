@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import ImageBanner from "@/component/ImageBanner";
 import Products from "@/component/Products";
 
