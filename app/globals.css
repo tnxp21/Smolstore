@@ -53,6 +53,15 @@ header {
     font-family: "Grenze", serif;
 }
 
+.cart-num-small{
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    color: #030615;
+    font-family: "Grenze", serif;
+    font-size: 0.6rem;
+}
+
 .header-content h1 {
     background: #030615;
     color: white;
